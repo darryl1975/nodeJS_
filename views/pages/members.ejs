@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title><%=page_title %></title>
+  <% include ../partials/head %>
+</head>
+<body> 
+
+  <div style="margin:100px;">
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <div class="jumbotron"  style="padding:40px;">
+      <h2>Members - List</h2>
+      <p><a class="btn btn-primary btn-lg" href="/members/add" role="button">Add New Member</a></p>
+
+      <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>ID</th>
+                    <th>Surname</th>
+                    <th>First Name</th>
+                    <th>Second Name</th>
+                    <th width="120px">Action</th>
+                </tr>
+                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1) %></td>
+                    <td><%=data[i].mid %></td>
+                    <td><%=data[i].surname %></td>
+                    <td><%=data[i].fname %></td>
+                    <td><%=data[i].secondname %></td>
+                    <td>
+                        <a class="a-inside edit" href="../members/edit/<%=data[i].mid %>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../members/delete/<%=data[i].mid %>">Delete</a>
+                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No member</td>
+                 </tr>
+            <% } %>
+            </table>
+         </div>
+    </div>
+  </div>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>Simple Node - Home</title>
+  <% include ../partials/head %>
+</head>
+<body>
+
+  <div style="margin:100px;">
+    <header>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Simple Website</a>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/home">Home</a>
+          </li>
+          <li class="active">
+            <a href="/members">Members</a>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/sitemap">Sitemap</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+        <div class="jumbotron"  style="padding:40px;">
+            <h2>Member - Update</h2>
+
+            <form method="post" action="/members/edit/<%=data[0].mid%>">
+                <table cellpadding="11">
+                <tr>
+                    <td>Surname</td>
+                    <td>: <input type="text" name="surname" value="<%=data[0].surname %>" required></td>
+                 </tr>
+                 <tr>
+                    <td valign="top">First Name</td>
+                    <td valign="top">: 
+                        <textarea name="fname" required cols="30" rows="5"><%=data[0].fname %></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Second Name</td>
+                    <td>: <input type="text" value="<%=data[0].secondname %>" name="secondname" required></td>
+                 </tr>
+                 <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+  </div>
+
+  <footer>
+    <%- include ../partials/footer.ejs %>
+  </footer>
+</body>
+</html>

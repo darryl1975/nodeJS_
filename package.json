@@ -1,0 +1,21 @@
+{
+  "name": "06",
+  "version": "1.0.0",
+  "description": "simple HTML website using nodeJS",
+  "main": "htmlExample01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ejsExample03.js"
+  },
+  "keywords": [
+    "html",
+    "nodeJS",
+    "expressJS",
+    "MVC"
+  ],
+  "author": "Darryl Ng",
+  "license": "ISC",
+  "dependencies": {
+    "express-myconnection": "^1.0.4"
+  }
+}
